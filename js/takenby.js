@@ -68,11 +68,22 @@
 		<p class="date"><%= date %></p>\
 	</div>\
 </div>';
+      this.setsTemplate = '\
+<div class="set-cell">\
+	<a href="http://www.flickr.com/photos/<%= username %>/sets/<%= setid %>">\
+		<img src="<%= src %>" width="75" height="75">\
+	</a>\
+</div>';
       this.flickr = new Flickr;
       this.init();
     }
 
     Display.prototype.init = function() {
+      this.photos();
+      return this.sets();
+    };
+
+    Display.prototype.photos = function() {
       var self;
       self = this;
       return this.flickr.photos(function(res) {
@@ -96,6 +107,31 @@
           build(photo);
         }
         return self.elements.photos.append(html);
+      });
+    };
+
+    Display.prototype.sets = function() {
+      var self;
+      self = this;
+      return this.flickr.sets(function(res) {
+        var build, html, set, _i, _len, _ref;
+        html = '';
+        build = function(set) {
+          var data, url;
+          url = "http://farm" + set.farm + ".staticflickr.com/" + set.server + "/" + set.primary + "_" + set.secret + "_s.jpg";
+          data = {
+            username: self.flickr.username,
+            src: url,
+            setid: set.id
+          };
+          return html += _.template(self.setsTemplate, data);
+        };
+        _ref = res.photosets.photoset;
+        for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+          set = _ref[_i];
+          build(set);
+        }
+        return self.elements.sets.prepend(html);
       });
     };
 
