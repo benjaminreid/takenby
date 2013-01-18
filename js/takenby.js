@@ -60,11 +60,44 @@
         photos: $('#photo-container'),
         sets: $('#sets')
       };
+      this.photoTemplate = '\
+<div class="photo">\
+	<img src="<%= src %>">\
+	<div class="photo-info">\
+		<h2><%= title %></h2>\
+		<p class="date"><%= date %></p>\
+	</div>\
+</div>';
       this.flickr = new Flickr;
       this.init();
     }
 
-    Display.prototype.init = function() {};
+    Display.prototype.init = function() {
+      var self;
+      self = this;
+      return this.flickr.photos(function(res) {
+        var build, html, photo, _i, _len, _ref;
+        html = '';
+        build = function(photo) {
+          var data, date, humanDate, url;
+          url = photo.url_l;
+          date = photo.datetaken.split('-');
+          humanDate = date[2].split(' ')[0] + '.' + date[1] + '.' + date[0];
+          data = {
+            src: url,
+            date: humanDate,
+            title: photo.title
+          };
+          return html += _.template(self.photoTemplate, data);
+        };
+        _ref = res.photoset.photo;
+        for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+          photo = _ref[_i];
+          build(photo);
+        }
+        return self.elements.photos.append(html);
+      });
+    };
 
     return Display;
 
@@ -81,24 +114,38 @@
     function Flickr() {
       this.base = 'http://api.flickr.com/services/rest/?method=';
       this.method = 'flickr.photosets.getPhotos';
+      this.sMethod = 'flickr.photosets.getList';
       this.format = 'json';
       this.apiKey = TAKEN.apiKey;
       this.username = TAKEN.username;
       this.userId = TAKEN.userId;
       this.photoSetId = TAKEN.photoSetId;
-      this.url = "" + this.base + this.method + "&api_key=" + this.apiKey + "&photoset_id=" + this.photoSetId + "&extras=date_taken,url_l&format=" + this.format + "&nojsoncallback=1";
+      this.photosURL = "" + this.base + this.method + "&api_key=" + this.apiKey + "&photoset_id=" + this.photoSetId + "&extras=date_taken,url_l&format=" + this.format + "&nojsoncallback=1";
+      this.setURL = "" + this.base + this.sMethod + "&api_key=" + this.apiKey + "&user_id=" + this.userId + "&page=1&per_page=3&format=" + this.format + "&nojsoncallback=1";
     }
 
-    Flickr.prototype.getPhotos = function(cb) {
+    Flickr.prototype.get = function(cb, url) {
       return $.ajax({
-        url: this.url,
+        url: url,
+        type: 'GET',
         dataType: 'json',
         success: function(res) {
           if (res.stat === 'ok') {
             return cb(res);
           }
+        },
+        error: function(e) {
+          return console.log('error', e, url);
         }
       });
+    };
+
+    Flickr.prototype.photos = function(cb) {
+      return this.get(cb, this.photosURL);
+    };
+
+    Flickr.prototype.sets = function(cb) {
+      return this.get(cb, this.setURL);
     };
 
     return Flickr;
