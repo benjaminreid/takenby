@@ -1,2 +1,2 @@
 $(document).ready ->
-	console.log 'ready...'
+	new Toggle

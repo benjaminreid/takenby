@@ -9,7 +9,8 @@
     <link rel="stylesheet" type="text/css" href="css/styles.css">
   </head>
   <body>
-    <header>
+
+    <header id="header">
       <div class="wrapper">
         <h1>Taken by <span><?= $name ?></span></h1>
         <a href="#info" class="sp sp-i-icon i-icon" id="info-toggle">Information</a>
@@ -44,6 +45,7 @@
         </div><!-- /.wrapper --> 
       </div><!-- /.info-box -->
     </header>
+
     <div class="wrapper">
       
       <div class="container" id="photo-container">
@@ -51,7 +53,7 @@
 
       <a href="http://www.flickr.com/photos/<?= $flickr_username ?>/" class="sp sp-more">View more</a>
     </div><!-- /.wrapper -->
-    
+
     <footer>
       <div class="wrapper">
         <p>Designed &amp; built by <a href="http://www.nouveller.com/">Nouveller</a></p>
