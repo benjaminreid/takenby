@@ -25,6 +25,7 @@ h1 {
   line-height: 25px;
   text-transform: uppercase;
   font-weight: normal;
+
   span {
     color: $baseColour;
   }
@@ -81,36 +82,47 @@ header {
       outline: none;
     }
   }
+
   .info-box {
     width: 100%;
     height: 200px;
-    background: fadeout($baseColour, 10%);
+    background: transparentize($baseColour, 0.1);
+
     .wrapper {
       width: 1004px;
       padding: 0 20px 0 20px;
+
       .column {
         width: 334px;
         float: left;
         overflow: hidden;
+
         p, a {
           color: $darkColour;
         }
+
         a:hover {
           color: #fff;
         }
+
         .view-more:hover {
           color: #000;
         }
+
       }
+
       .col-1 {
+
         p {
           padding: 0 30px 10px 0;
         }
       }
+
       .col-2 {
         width: 370px;
         margin-right: 40px;
       }
+
       .col-3 {
         width: 260px;
       }
@@ -122,12 +134,15 @@ header {
   padding: 0;
   margin: 0;
   list-style: none;
+
   li {
     border-bottom: solid 1px lighten($baseColour, 10%); 
+
     a {
       padding: 5px 0 5px 0;
       text-transform: uppercase;
       display: block;
+
       &:hover {
         text-decoration: none;  
       }
@@ -227,6 +242,7 @@ footer {
   height: 50px;
   background: #fff;
   margin: 40px 0 0 0;
+
   p {
     padding: 20px 0 0 20px;
     text-transform: uppercase;
@@ -237,8 +253,10 @@ footer {
   .wrapper {
     width: 844px;
   }
+
   .photo {
     width: 824px;
+
     img {
       width: 824px;
     }
@@ -249,8 +267,10 @@ footer {
   .wrapper {
     width: 644px;
   }
+
   .photo {
     width: 624px;
+
     img {
       width: 624px;
     }
@@ -262,15 +282,19 @@ footer {
     font-size: 16px;
     padding-left: 0px;
   }
+
   .wrapper {
     width: 465px;
   }
+
   .container {
     padding-top: 62px;
   }
+
   .photo {
     width: 445px;
     margin-bottom: 12px;
+
     img {
       width: 445px;
     }
@@ -282,18 +306,23 @@ footer {
     font-size: 16px;
     padding-left: 0px;
   }
+
   .wrapper {
     width: 295px;
   }
+
   .container {
     padding-top: 62px;
   }
+
   .photo {
     width: 275px;
     margin-bottom: 12px;
+
     .photo-info {
       display: none;
     }
+    
     img {
       width: 275px;
     }
