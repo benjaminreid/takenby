@@ -51,13 +51,14 @@
 
       <a href="http://www.flickr.com/photos/<?= $flickr_username ?>/" class="sp sp-more">View more</a>
     </div><!-- /.wrapper -->
+    
     <footer>
       <div class="wrapper">
         <p>Designed &amp; built by <a href="http://www.nouveller.com/">Nouveller</a></p>
       </div><!-- /.wrapper -->
     </footer>
+
+    <script src="js/libs.min.js"></script>
+    <script src="js/takenby.js"></script>
   </body>
-  
-  <script src="js/libs.min.js"></script>
-  <script src="js/min/taken-min.js" type="text/javascript"></script>
 </html>
