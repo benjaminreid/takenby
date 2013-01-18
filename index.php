@@ -21,15 +21,15 @@
   <body>
 
     <div class="header" id="header">
-
-      <div class="wrapper">
-        <h1>Taken by <span><?= $name ?></span></h1>
-        <a href="#info" class="i-icon" id="info-toggle">Information</a>
-      </div>
-
+	  <div class="heading">
+	      <div class="wrapper">
+	        <h1>Taken by <span><?= $name ?></span></h1>
+	        <a href="#info" class="i-icon" id="info-toggle">Information</a>
+	      </div>
+	  </div>
       <div class="info-box">
         <div class="wrapper">
-
+	     <div class="container">
           <div class="column col-1">
             <h3>About Me</h3>
             <p><?= $about ?></p>
@@ -57,14 +57,14 @@
               <li><a href="http://www.nouveller.com/">Nouveller</a></li>
             </ul>
           </div>
-
-        </div><!-- /.wrapper --> 
+	     </div><!-- /.container -->
+        </div><!-- /.wrapper -->
       </div><!-- /.info-box -->
 
     </div><!-- /.header -->
 
     <div class="wrapper">
-      
+
       <div class="container" id="photo-container">
       </div><!-- /#photo-container -->
 
