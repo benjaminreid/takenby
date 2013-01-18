@@ -2,6 +2,16 @@
 
 A clean and easy way to show off your Flickr portfolio — http://takenby.benjaminreid.me/
 
+## Features
+- Looks great on both desktop and mobile devices.
+- Easy setup, one easy config file.
+- Easy to customise the colour scheme.
+- It's free and open for all to chop, change and customise.
+
+## What's coming up?
+- Greater responsive support
+- Option to have images lazy load
+
 ## Installation
 To get this up and running, there's a few steps you'll need to take. Do not worry though, there's nothing too taxing!
 - First [download](https://github.com/nouveller/takenby/archive/master.zip) or clone this repo.
@@ -11,7 +21,7 @@ To get this up and running, there's a few steps you'll need to take. Do not worr
 	- Select non-commercial key on the next screen, and then fill in your details. After that, you should be presented with your API key. Keep this safe.
 - __Set ID__
 	- This will be the ID of the set you want to show off. Just visit one of your sets on Flickr and get this (http://www.flickr.com/photos/nouveller/sets/__72157629867441961__/) part of the URL.
-- __Flickr userd ID__
+- __Flickr user ID__
 	- Head over to [idGettr](http://idgettr.com/) and input your profile address. This should give you your Flickr ID.
 - Once you have these, open up `config.php` and fill in the __API key__, __set ID__ and the __user ID__. Do not forget to fill out your normal Flickr __username__ as well.
 - Also in `config.php` don't forget to fill out your name, Twitter username (if you have one) and a paragraph about yourself.
