@@ -18,7 +18,6 @@ h1 {
   line-height: 25px;
   text-transform: uppercase;
   font-weight: normal;
-
   span {
     color: $baseColour;
   }
@@ -43,8 +42,8 @@ h3 {
 }
 
 a, a:visited {
-  color: $baseColour; 
-  text-decoration: none; 
+  color: $baseColour;
+  text-decoration: none;
 }
 
 a:hover {
@@ -53,62 +52,55 @@ a:hover {
 
 .header {
   width: 100%;
-  height: 50px;
-  @include transparent-background(#fff,255,255,255,0.9);
+  background: transparentize($baseColour, 0.1);
   overflow: hidden;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 100;
-  @include transition(height,0.5s,ease-out);
-
-  .wrapper {
-    height: 50px;
+  .heading {
+	  background: #fff;
+	  padding-bottom: 8px;
   }
-
   .info-box {
     width: 100%;
-    height: 200px;
-    background: transparentize($baseColour, 0.1);
-
-    .wrapper {
-      width: 1004px;
-      padding: 0 20px 0 20px;
-
-      .column {
-        width: 334px;
-        float: left;
-        overflow: hidden;
-
-        p, a {
-          color: $darkColour;
-        }
-
-        a:hover {
-          color: #fff;
-        }
-
-        .view-more:hover {
-          color: #000;
-        }
-
+    max-height: 0;
+    @include transition(max-height,0.5s,ease-out);
+    overflow: hidden;
+    .container {
+	    padding-top: 20px;
+    }
+    .column {
+      width: 334px;
+      float: left;
+      overflow: hidden;
+      padding-bottom: 20px;
+      p, a {
+        color: $darkColour;
       }
 
-      .col-1 {
-
-        p {
-          padding: 0 30px 10px 0;
-        }
+      a:hover {
+        color: #fff;
       }
 
-      .col-2 {
-        width: 370px;
-        margin-right: 40px;
+      .view-more:hover {
+        color: #000;
       }
 
-      .col-3 {
-        width: 260px;
+    }
+    .col-1 {
+      width: 40%;
+      p {
+        padding: 0 30px 10px 0;
       }
+    }
+
+    .col-2 {
+      width: 40%;
+    }
+
+    .col-3 {
+      width: 20%;
     }
   }
 }
@@ -140,7 +132,7 @@ a:hover {
   list-style: none;
 
   li {
-    border-bottom: solid 1px lighten($baseColour, 10%); 
+    border-bottom: solid 1px lighten($baseColour, 10%);
 
     a {
       padding: 5px 0 5px 0;
@@ -148,7 +140,7 @@ a:hover {
       display: block;
 
       &:hover {
-        text-decoration: none;  
+        text-decoration: none;
       }
     }
   }
@@ -159,7 +151,7 @@ a:hover {
   height: 85px;
   background: #fff;
   float: left;
-  margin: 0 10px 0 0;
+  margin: 0 10px 10px 0;
   overflow: hidden;
 
   a {
@@ -189,27 +181,30 @@ a:hover {
   margin-right: 0;
 }
 
-.header-open {
-  height: 250px;
+.header-open .info-box {
+  max-height: 500px;
 }
 
 .wrapper {
-  width: 1044px;
+  width: 1025px;
+  max-width: 100%;
   margin: 0 auto;
   position: relative;
 }
 
 .container {
   padding: 100px 0 0 0;
+  margin: 0 15px;
 }
 
 .photo {
-  width: 1024px;
-  padding: 10px;
-  margin: 0 0 45px 0;
-  background: #fff;
-  position: relative;
-
+	margin: 0 0 45px 0;
+	position: relative;
+	img {
+	  width: 100%;
+	  border: 10px solid #fff;
+	  box-sizing: border-box;
+	}
   .photo-info {
     width: 100%;
     height: 70px;
@@ -255,82 +250,7 @@ a:hover {
   }
 }
 
-@media screen and (max-width: 1044px) {
-  .wrapper {
-    width: 844px;
-  }
-
-  .photo {
-    width: 824px;
-
-    img {
-      width: 824px;
-    }
-  }
-}
 
 @media screen and (max-width: 824px) {
-  .wrapper {
-    width: 644px;
-  }
-
-  .photo {
-    width: 624px;
-
-    img {
-      width: 624px;
-    }
-  }
-}
-
-@media screen and (max-device-width: 480px) {
-   h1 {
-    font-size: 16px;
-    padding-left: 0px;
-  }
-
-  .wrapper {
-    width: 465px;
-  }
-
-  .container {
-    padding-top: 62px;
-  }
-
-  .photo {
-    width: 445px;
-    margin-bottom: 12px;
-
-    img {
-      width: 445px;
-    }
-  }
-}
-
-@media screen and (max-width: 320px) {
-  h1 {
-    font-size: 16px;
-    padding-left: 0px;
-  }
-
-  .wrapper {
-    width: 295px;
-  }
-
-  .container {
-    padding-top: 62px;
-  }
-
-  .photo {
-    width: 275px;
-    margin-bottom: 12px;
-
-    .photo-info {
-      display: none;
-    }
-    
-    img {
-      width: 275px;
-    }
-  }
+	.header .info-box .column { width: 100%; }
 }
