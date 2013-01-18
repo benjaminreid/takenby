@@ -5,13 +5,6 @@
 $baseColour: #fc9b45;
 $darkColour: darken(desaturate($baseColour, 30%), 20%);
 
-/* sprites */
-.sp { background: url(../images/sprite.png) no-repeat top left; }
-.header .wrapper .sp-i-icon-hover { background-position: 0 0; width: 16px; height: 16px; } 
-.sp-i-icon { background-position: 0 -26px; width: 16px; height: 16px; } 
-.sp-more-hover, .sp-more:hover { background-position: 0 -52px; width: 1006px; height: 30px; } 
-.sp-more { background-position: 0 -92px; width: 1006px; height: 30px; } 
-
 body {
   font: 12px/14px 'Montserrat','Helvetica','Arial',sans-serif;
   background: lighten($baseColour, 30%);
@@ -71,16 +64,6 @@ a:hover {
 
   .wrapper {
     height: 50px;
-
-    .i-icon {
-      display: block;
-      text-indent: -9999px;
-      position: absolute;
-      z-index: 1;
-      top: 17px;
-      right: 20px;
-      outline: none;
-    }
   }
 
   .info-box {
@@ -127,6 +110,27 @@ a:hover {
         width: 260px;
       }
     }
+  }
+}
+
+.i-icon {
+  width: 16px;
+  height: 16px;
+  background: url(../images/i-icon.png) no-repeat;
+  display: block;
+  text-indent: -9999px;
+  position: absolute;
+  z-index: 1;
+  top: 17px;
+  right: 20px;
+  outline: none;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &.sp-i-icon-hover {
+    opacity: 0.5;
   }
 }
 
@@ -225,16 +229,18 @@ a:hover {
   }
 }
 
-.sp-more, .sp-more-hover, .sp-more:hover {
+.more {
+  width: 95%;
+  height: 30px;
+  background: url(../images/more.png) no-repeat 50% 50%;
   display: block;
   text-indent: -9999px;
-  width: 95%;
   margin: 0 auto 0 auto;
-  background-position: center -92px;
-}
+  opacity: 0.8;
 
-.sp-more:hover {
-  background-position: center -52px;
+  &:hover {
+    opacity: 1;
+  }
 }
 
 .footer {

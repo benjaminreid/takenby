@@ -11,16 +11,20 @@
   <body>
 
     <div class="header" id="header">
+
       <div class="wrapper">
         <h1>Taken by <span><?= $name ?></span></h1>
-        <a href="#info" class="sp sp-i-icon i-icon" id="info-toggle">Information</a>
-      </div><!-- /.wrapper -->
+        <a href="#info" class="i-icon" id="info-toggle">Information</a>
+      </div>
+
       <div class="info-box">
         <div class="wrapper">
+
           <div class="column col-1">
             <h3>About Me</h3>
             <p><?= $about ?></p>
-          </div><!-- /.column -->
+          </div>
+
           <div class="column col-2">
             <h3>Photo Sets</h3>
             <div id="sets">
@@ -28,7 +32,8 @@
                 <a class="view-more" href="http://www.flickr.com/photos/<?= $flickr_username ?>/sets">View<br />more</a>
               </div><!-- /.set-cell .last -->
             </div><!-- /#sets -->
-          </div><!-- /.column -->
+          </div>
+
           <div class="column col-3">
             <h3>You can find me on</h3>
             <ul class="social-list">
@@ -41,17 +46,19 @@
               <li><a href="http://www.benjaminreid.me/">Blog</a></li>
               <li><a href="http://www.nouveller.com/">Nouveller</a></li>
             </ul>
-          </div><!-- /.column -->
+          </div>
+
         </div><!-- /.wrapper --> 
       </div><!-- /.info-box -->
-    </div>
+
+    </div><!-- /.header -->
 
     <div class="wrapper">
       
       <div class="container" id="photo-container">
       </div><!-- /#photo-container -->
 
-      <a href="http://www.flickr.com/photos/<?= $flickr_username ?>/" class="sp sp-more">View more</a>
+      <a href="http://www.flickr.com/photos/<?= $flickr_username ?>/" class="more">View more</a>
     </div><!-- /.wrapper -->
 
     <div class="footer">
