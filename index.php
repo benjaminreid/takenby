@@ -48,7 +48,7 @@
             <h3>You can find me on</h3>
             <ul class="social-list">
               <?php if ($flickr_username) : ?>
-              <li><a href="www.flickr.com/photos/<?= $flickr_username ?>/">Flickr</a></li>
+              <li><a href="http://www.flickr.com/photos/<?= $flickr_username ?>/">Flickr</a></li>
               <?php endif; ?>
               <?php if ($twitter_username) : ?>
               <li><a href="https://twitter.com/<?= $twitter_username ?>">Twitter</a></li>
