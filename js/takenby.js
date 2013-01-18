@@ -60,27 +60,19 @@
         photos: $('#photo-container'),
         sets: $('#sets')
       };
-      this.photoTemplate = '\
-<div class="photo">\
-	<img src="<%= src %>">\
-	<div class="photo-info">\
-		<h2><%= title %></h2>\
-		<p class="date"><%= date %></p>\
-	</div>\
-</div>';
-      this.setsTemplate = '\
-<div class="set-cell">\
-	<a href="http://www.flickr.com/photos/<%= username %>/sets/<%= setid %>">\
-		<img src="<%= src %>" width="75" height="75">\
-	</a>\
-</div>';
       this.flickr = new Flickr;
       this.init();
     }
 
     Display.prototype.init = function() {
+      this.getElements();
       this.photos();
       return this.sets();
+    };
+
+    Display.prototype.getElements = function() {
+      this.photoTemplate = $('#template-photos').html();
+      return this.setsTemplate = $('#template-sets').html();
     };
 
     Display.prototype.photos = function() {

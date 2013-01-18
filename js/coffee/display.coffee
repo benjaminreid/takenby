@@ -4,28 +4,17 @@ class Display
 			photos: $('#photo-container')
 			sets: $('#sets')
 
-		@photoTemplate = '
-<div class="photo">
-	<img src="<%= src %>">
-	<div class="photo-info">
-		<h2><%= title %></h2>
-		<p class="date"><%= date %></p>
-	</div>
-</div>'
-	
-		@setsTemplate = '
-<div class="set-cell">
-	<a href="http://www.flickr.com/photos/<%= username %>/sets/<%= setid %>">
-		<img src="<%= src %>" width="75" height="75">
-	</a>
-</div>'
-
 		@flickr = new Flickr
 		@init()
 
 	init: ->
+		@getElements()
 		@photos()
 		@sets()
+
+	getElements: ->
+		@photoTemplate 	= $('#template-photos').html()
+		@setsTemplate 	= $('#template-sets').html()
 
 	photos: ->
 		self = @

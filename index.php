@@ -67,6 +67,22 @@
       TAKEN.userId      = "<?= $user_id ?>";
       TAKEN.username    = "<?= $flickr_username ?>";
     </script>
+    <script type="takenby-template" id="template-photos">
+      <div class="photo">
+        <img src="<%= src %>">
+        <div class="photo-info">
+          <h2><%= title %></h2>
+          <p class="date"><%= date %></p>
+        </div>
+      </div>
+    </script>
+    <script type="takenby-template" id="template-sets">
+      <div class="set-cell">
+        <a href="http://www.flickr.com/photos/<%= username %>/sets/<%= setid %>">
+          <img src="<%= src %>" width="75" height="75">
+        </a>
+      </div>
+    </script>
     <script src="js/libs.min.js"></script>
     <script src="js/takenby.js"></script>
   </body>
