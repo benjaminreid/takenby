@@ -60,6 +60,13 @@
       </div><!-- /.wrapper -->
     </footer>
 
+    <script>
+      var TAKEN = TAKEN || {};
+      TAKEN.apiKey      = "<?= $api_key ?>";
+      TAKEN.photoSetId  = "<?= $photo_set_id ?>";
+      TAKEN.userId      = "<?= $user_id ?>";
+      TAKEN.username    = "<?= $flickr_username ?>";
+    </script>
     <script src="js/libs.min.js"></script>
     <script src="js/takenby.js"></script>
   </body>
