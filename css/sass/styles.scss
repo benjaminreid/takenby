@@ -1,9 +1,9 @@
-@import "reset";
+@import "normalize";
 @import "mixins";
 @import "http://fonts.googleapis.com/css?family=Montserrat";
 
-@baseColour: #fc9b45;
-@darkColour: darken(desaturate(@baseColour, 30%), 20%);
+$baseColour: #fc9b45;
+$darkColour: darken(desaturate($baseColour, 30%), 20%);
 
 /* sprites */
 .sp { background: url(../images/sprite.png) no-repeat top left; }
@@ -14,7 +14,7 @@ header .wrapper .sp-i-icon-hover { background-position: 0 0; width: 16px; height
 
 body {
   font: 12px/14px 'Montserrat','Helvetica','Arial',sans-serif;
-  background: lighten(@baseColour, 30%);
+  background: lighten($baseColour, 30%);
   color: #a7a7a7;
 }
 
@@ -26,7 +26,7 @@ h1 {
   text-transform: uppercase;
   font-weight: normal;
   span {
-    color: @baseColour;
+    color: $baseColour;
   }
 }
 
@@ -49,7 +49,7 @@ h3 {
 }
 
 a, a:visited {
-  color: @baseColour; 
+  color: $baseColour; 
   text-decoration: none; 
 }
 
@@ -60,15 +60,17 @@ a:hover {
 header {
   width: 100%;
   height: 50px;
-  .transparent-background(#fff,255,255,255,0.9);
+  @include transparent-background(#fff,255,255,255,0.9);
   overflow: hidden;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 100;
-  .transition(height,0.5s,ease-out);
+  @include transition(height,0.5s,ease-out);
+
   .wrapper {
     height: 50px;
+
     .i-icon {
       display: block;
       text-indent: -9999px;
@@ -82,7 +84,7 @@ header {
   .info-box {
     width: 100%;
     height: 200px;
-    background: fadeout(@baseColour, 10%);
+    background: fadeout($baseColour, 10%);
     .wrapper {
       width: 1004px;
       padding: 0 20px 0 20px;
@@ -91,7 +93,7 @@ header {
         float: left;
         overflow: hidden;
         p, a {
-          color: @darkColour;
+          color: $darkColour;
         }
         a:hover {
           color: #fff;
@@ -121,7 +123,7 @@ header {
   margin: 0;
   list-style: none;
   li {
-    border-bottom: solid 1px lighten(@baseColour, 10%); 
+    border-bottom: solid 1px lighten($baseColour, 10%); 
     a {
       padding: 5px 0 5px 0;
       text-transform: uppercase;
@@ -140,16 +142,20 @@ header {
   float: left;
   margin: 0 10px 0 0;
   overflow: hidden;
+
   a {
     display: block;
     padding: 5px;
+
     img {
-      .transition(opacity,0.5s,ease-out);
+      @include transition(opacity,0.5s,ease-out);
+
       &:hover{
         opacity: 0.5;
       }
     }
   }
+
   .view-more {
     width: 75px;
     height: 55px;
@@ -184,15 +190,17 @@ header {
   margin: 0 0 45px 0;
   background: #fff;
   position: relative;
+
   .photo-info {
     width: 100%;
     height: 70px;
-    .transparent-background(#fff,255,255,255,0.6);
+    @include transparent-background(#fff,255,255,255,0.6);
     position: absolute;
     z-index: 1;
     bottom: 10px;
     left: 0;
     text-align: center;
+
     .date {
       padding: 3px 0 3px 0;
       margin: 0;
