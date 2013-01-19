@@ -21,43 +21,45 @@
   <body>
 
     <div class="header" id="header">
-	  <div class="heading">
+      
+      <div class="heading">
 	      <div class="wrapper">
 	        <h1>Taken by <span><?= $name ?></span></h1>
 	        <a href="#info" class="i-icon" id="info-toggle">Information</a>
 	      </div>
-	  </div>
+	    </div>
+
       <div class="info-box">
         <div class="wrapper">
-	     <div class="container">
-          <div class="column col-1">
-            <h3>About Me</h3>
-            <p><?= $about ?></p>
-          </div>
+          <div class="container">
+            <div class="column col-1">
+              <h3>About Me</h3>
+              <p><?= $about ?></p>
+            </div>
 
-          <div class="column col-2">
-            <h3>Photo Sets</h3>
-            <div id="sets">
-              <div class="set-cell last">
-                <a class="view-more" href="http://www.flickr.com/photos/<?= $flickr_username ?>/sets">View<br />more</a>
-              </div><!-- /.set-cell .last -->
-            </div><!-- /#sets -->
-          </div>
+            <div class="column col-2">
+              <h3>Photo Sets</h3>
+              <div id="sets">
+                <div class="set-cell last">
+                  <a class="view-more" href="http://www.flickr.com/photos/<?= $flickr_username ?>/sets">View<br />more</a>
+                </div><!-- /.set-cell .last -->
+              </div><!-- /#sets -->
+            </div>
 
-          <div class="column col-3">
-            <h3>You can find me on</h3>
-            <ul class="social-list">
-              <?php if ($flickr_username) : ?>
-              <li><a href="http://www.flickr.com/photos/<?= $flickr_username ?>/">Flickr</a></li>
-              <?php endif; ?>
-              <?php if ($twitter_username) : ?>
-              <li><a href="https://twitter.com/<?= $twitter_username ?>">Twitter</a></li>
-              <?php endif; ?>
-              <li><a href="http://www.benjaminreid.me/">Blog</a></li>
-              <li><a href="http://www.nouveller.com/">Nouveller</a></li>
-            </ul>
-          </div>
-	     </div><!-- /.container -->
+            <div class="column col-3">
+              <h3>You can find me on</h3>
+              <ul class="social-list">
+                <?php if ($flickr_username) : ?>
+                <li><a href="http://www.flickr.com/photos/<?= $flickr_username ?>/">Flickr</a></li>
+                <?php endif; ?>
+                <?php if ($twitter_username) : ?>
+                <li><a href="https://twitter.com/<?= $twitter_username ?>">Twitter</a></li>
+                <?php endif; ?>
+                <li><a href="http://www.benjaminreid.me/">Blog</a></li>
+                <li><a href="http://www.nouveller.com/">Nouveller</a></li>
+              </ul>
+            </div>
+  	      </div><!-- /.container -->
         </div><!-- /.wrapper -->
       </div><!-- /.info-box -->
 

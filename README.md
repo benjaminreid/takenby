@@ -41,6 +41,7 @@ __Don't like or know Sass?__ Then simply edit the hex values in styles.css.
 As everything is currently templated with JavaScript, you'll find the templates at the bottom of the `index.php` file in `<script>` tags with their type set to `takenby-template`.
 
 ## Thanks
+- [David Darnes](https://twitter.com/DavidDarnes) for responsive improvements
 - [Kristian Hjelle](http://everydayphotos.co/) for inspiring the idea and design
 - [jQuery](http://jquery.com/) for DOM wizardy.
 - [Underscore](http://underscorejs.org/) for template taming.
