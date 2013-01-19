@@ -9,8 +9,9 @@ A clean and easy way to show off your Flickr portfolio — http://takenby.benjam
 - It's free and open for all to chop, change and customise.
 
 ## What's coming up?
-- Greater responsive support
+- ~~Greater responsive support~~ (Contributed by [David Darnes](https://twitter.com/DavidDarnes))
 - Option to have images lazy load
+- Rather than use an API like Flickr, simply use an folder on your server with images to populate the page automatically.
 
 ## Installation
 To get this up and running, there's a few steps you'll need to take. Do not worry though, there's nothing too taxing!
